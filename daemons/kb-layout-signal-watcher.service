@@ -1,0 +1,27 @@
+[Unit]
+Description=KB-Layout-Signal-Watcher
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+PIDFile=/tmp/kb-layout-signal-watcher.pid
+WorkingDirectory=/tmp/
+
+User=root
+#Group=root
+
+OOMScoreAdjust=-1000
+
+Environment=PATH=/bin/
+
+ExecStart=/bin/bash /home/bvn13/develop/kb-layout-caps-led/scripts/kb-layout-signal-watcher.sh
+ExecStop=kill -0 `cat /tmp/kb-layout-signal-watcher.pid`
+ExecReload=kill -0 `cat /tmp/kb-layout-signal-watcher.pid` && /bin/bash /home/bvn13/develop/kb-layout-caps-led/scripts/kb-layout-signal-watcher.sh
+
+TimeoutSec=300
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

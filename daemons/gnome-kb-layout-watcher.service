@@ -1,0 +1,24 @@
+[Unit]
+Description=Gnome-KB-Layout-Watcher
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+PIDFile=/tmp/gnome-kb-layout-watcher.pid
+WorkingDirectory=/tmp/
+
+#User=bvn13
+#Group=bvn13
+
+OOMScoreAdjust=-1000
+
+ExecStart=/bin/bash /home/bvn13/develop/kb-layout-caps-led/scripts/gnome-kb-layout-watcher.sh
+ExecStop=kill -0 `cat /tmp/gnome-kb-layout-watcher.pid`
+ExecReload=kill -0 `cat /tmp/gnome-kb-layout-watcher.pid` && /bin/bash /home/bvn13/develop/kb-layout-caps-led/scripts/gnome-kb-layout-watcher.sh
+
+TimeoutSec=300
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
