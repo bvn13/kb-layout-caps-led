@@ -1,14 +1,12 @@
 # kb-layout-caps-led
 
-> Switching on and off capslock led according to the keyboard layout
-
-This project is against to show your keyboard layout switching with CapsLock LED indicator.
+This project is to show your keyboard layout switching with CapsLock LED indicator.
 
 ## Installation
 
 There are two systemd daemons: one is running from user, the other one as root.
 
-### User's daemon is against of to determine the current keyboard layout and tell it to root's daemon
+### User's daemon is aimed to determine the current keyboard layout and tell it to root's daemon
 
 ```bash
 > systemctl --user enable /%FULL_PATH_TO%/daemons/gnome-kb-layout-watcher.service
@@ -18,7 +16,7 @@ There are two systemd daemons: one is running from user, the other one as root.
 > systemctl --user start gnome-kb-layout-watcher.service
 ```
 
-### Root's daemon is against of to set up the CapsLock LED indicator according of user's daemon data
+### Root's daemon is aimed to set up the CapsLock LED indicator according of user's daemon data
 
 ```bash
 > sudo cp /%FULL_PATH_TO/daemons/kb-layout-signal-watcher.service /etc/systemd/system/kb-layout-signal-watcher.service
