@@ -4,6 +4,11 @@ This project is to show your keyboard layout switching with CapsLock LED indicat
 
 ## Installation
 
+### Change the path to your project into
+
+1. daemons/gnome-kb-layout-watcher.service
+2. daemons/kb-layout-signal-watcher.service
+
 There are two systemd daemons: one is running from user, the other one as root.
 
 ### User's daemon is aimed to determine the current keyboard layout and tell it to root's daemon
