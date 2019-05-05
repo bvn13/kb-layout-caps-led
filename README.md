@@ -2,7 +2,7 @@
 
 > Switching on and off capslock led according to the keyboard layout
 
-This project is againts to show your keyboard layout switching with CapsLock LED indicator.
+This project is against to show your keyboard layout switching with CapsLock LED indicator.
 
 ## Installation
 
